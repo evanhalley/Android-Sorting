@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editTextIntegers"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:editable="false"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:maxLines="200" 
+        android:scrollHorizontally="false" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextGenerateSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/number_of_ints_to_generate"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonGenerateInts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/generate_integers" />
+
+    <Spinner
+        android:id="@+id/spinnerSortingAlgorithms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <Button
+        android:id="@+id/buttonSort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sort" />
+
+</LinearLayout>
