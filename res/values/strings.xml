@@ -3,5 +3,11 @@
 
     <string name="hello">Hello World, SortingActivity!</string>
     <string name="app_name">Android Sorting</string>
+    <string name="generate_integers">Generate Integers</string>
+    <string name="sort">Sort</string>
+    <string-array name="sorting_algorithms">
+        <item >Bubble Sort</item>
+    </string-array>
+        <string name="number_of_ints_to_generate">Enter number of integers to generate</string>
 
 </resources>

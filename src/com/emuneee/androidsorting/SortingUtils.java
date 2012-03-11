@@ -22,24 +22,28 @@ package com.emuneee.androidsorting;
  */
 public class SortingUtils {
 	
+	public static long numberOfSteps;
+	
 	/**
 	 * Using the bubble sorting algorithm, sorts an array of integers
 	 * @param integersToSort integers to be sorted
 	 * @return array containing a sorted set of integers
 	 */
-	public static Integer[] bubbleSortInt(Integer[] integersToSort) {
+	public static int[] bubbleSortInt(int[] integersToSort) {
 		boolean swapped = false;
 		int temp;
-		
+		numberOfSteps = 0;
 		do {
 			swapped = false;
 			for(int i = 0; i < integersToSort.length; i++) {
-				if(integersToSort[i] > integersToSort[i+1]) {
+				if((i + 1 < integersToSort.length) &&
+						integersToSort[i] > integersToSort[i+1]) {
 					// swap
 					temp = integersToSort[i];
 					integersToSort[i] = integersToSort[i+1];
 					integersToSort[i+1] = temp;
 					swapped = true;
+					numberOfSteps++;
 				}
 			}
 		} while(swapped);
