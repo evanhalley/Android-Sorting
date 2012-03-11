@@ -26,6 +26,7 @@ public class SortingUtils {
 	
 	/**
 	 * Using the bubble sorting algorithm, sorts an array of integers
+	 * O (n^2)
 	 * @param integersToSort integers to be sorted
 	 * @return array containing a sorted set of integers
 	 */
@@ -47,6 +48,38 @@ public class SortingUtils {
 				}
 			}
 		} while(swapped);
+		return integersToSort;
+	}
+	
+	/**
+	 * Using the selection sorting algorithm, sorts an array of integers
+	 * O (n^2)
+	 * @param integersToSort integers to be sorted
+	 * @return array containing a sorted set of integers
+	 */
+	public static int[] selectionSortInt(int[] integersToSort) {
+		int min;
+		int temp;
+		
+		numberOfSteps = 0;
+		for(int i = 0; i < integersToSort.length; i++) {
+			min = i;
+			
+			for(int j = i + 1; j < integersToSort.length; j++) {
+				numberOfSteps++;
+				if(integersToSort[j] < integersToSort[min]) {
+					min = j;
+				}
+			}
+			if(min != i) {
+				//swap
+				temp = integersToSort[i];
+				integersToSort[i] = integersToSort[min];
+				integersToSort[min] = temp;
+			}
+		}
+		
+		
 		return integersToSort;
 	}
 }

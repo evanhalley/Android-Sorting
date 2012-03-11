@@ -38,7 +38,8 @@ public class SortingActivity extends Activity {
 	public final static String NUMBER_OF_STEPS = "numberOfSteps";
 	
 	private enum SortingAlgorithm {
-		BubbleSort
+		BubbleSort,
+		SelectionSort
 	}
 	
 	private SortingAlgorithm sortingAlgorithm;
@@ -98,6 +99,7 @@ public class SortingActivity extends Activity {
     private class SortAsyncTask extends AsyncTask<Integer, Boolean, Boolean> {
     	private Long duration;
     	private ProgressDialog dialog; 
+    	private int[] unsorted;
     	private int[] sorted;
     	private String error;
     	
@@ -109,12 +111,15 @@ public class SortingActivity extends Activity {
     	
 		@Override
 		protected Boolean doInBackground(Integer... arg0) {
-			
+			unsorted = integersToSort.clone();
 			try {
 				duration = Calendar.getInstance().getTimeInMillis(); 
 				switch(sortingAlgorithm) {
 					case BubbleSort:
-						sorted = SortingUtils.bubbleSortInt(integersToSort);
+						sorted = SortingUtils.bubbleSortInt(unsorted);
+						break;
+					case SelectionSort:
+						sorted = SortingUtils.selectionSortInt(unsorted);
 						break;
 					default:
 						break;

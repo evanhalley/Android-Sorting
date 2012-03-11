@@ -7,6 +7,7 @@
     <string name="sort">Sort</string>
     <string-array name="sorting_algorithms">
         <item >Bubble Sort</item>
+        <item >Selection Sort</item>
     </string-array>
         <string name="number_of_ints_to_generate">Enter number of integers to generate</string>
 
