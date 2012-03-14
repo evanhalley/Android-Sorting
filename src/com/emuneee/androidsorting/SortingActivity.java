@@ -39,7 +39,9 @@ public class SortingActivity extends Activity {
 	
 	private enum SortingAlgorithm {
 		BubbleSort,
-		SelectionSort
+		SelectionSort,
+		InsertionSort,
+		QuickSort
 	}
 	
 	private SortingAlgorithm sortingAlgorithm;
@@ -120,6 +122,12 @@ public class SortingActivity extends Activity {
 						break;
 					case SelectionSort:
 						sorted = SortingUtils.selectionSortInt(unsorted);
+						break;
+					case InsertionSort:
+						sorted = SortingUtils.insertionSortInt(unsorted);
+						break;
+					case QuickSort:
+						sorted = SortingUtils.quickSortInt(unsorted);
 						break;
 					default:
 						break;
